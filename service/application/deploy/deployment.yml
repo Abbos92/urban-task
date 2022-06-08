@@ -6,6 +6,7 @@ spec:
   selector:
     matchLabels:
       app: urban-test
+  replicas: 3
   template:
     metadata:
       namespace: prod
