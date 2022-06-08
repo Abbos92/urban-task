@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: urban-test
+spec:
+  selector:
+    matchLabels:
+      app: urban-test
+  template:
+    metadata:
+      namespace: prod
+      labels:
+        app: urban-test
+    spec:
+      containers:
+      - name: urban-test
+        image: saridor/urban-test
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
