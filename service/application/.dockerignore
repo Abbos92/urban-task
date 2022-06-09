@@ -1,6 +1,0 @@
-Dockerfile
-.gitignore
-.editorconfig
-.dockerignore
-deploy
-terraform-deploy
