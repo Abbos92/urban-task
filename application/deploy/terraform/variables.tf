@@ -19,6 +19,6 @@ variable "appResource" {
 }
 
 variable "appReplicas" {
-  type = number
+  type    = number
   default = 3
 }
