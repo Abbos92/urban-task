@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: urban-test
+  namespace: prod
 spec:
   selector:
     matchLabels:
@@ -9,7 +10,6 @@ spec:
   replicas: 3
   template:
     metadata:
-      namespace: prod
       labels:
         app: urban-test
     spec:
