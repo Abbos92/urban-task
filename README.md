@@ -12,3 +12,7 @@ View plan before apply:
 Apply terraform:
 
 `terraform apply`
+
+After create cluster get kubeconfig file from GKE
+
+gcloud container clusters get-credentials gke-urbant-test --zone us-east1-b --project <project_ID>

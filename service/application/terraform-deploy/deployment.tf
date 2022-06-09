@@ -24,7 +24,7 @@ resource "kubernetes_deployment" "urban_deploy" {
       spec {
         container {
           name  = "urban-test-app"
-          image = "saridor/urban-test"
+          image = "saridor/urban-test:v1"
           resources {
             limits = {
               memory = "128Mi"
@@ -34,20 +34,20 @@ resource "kubernetes_deployment" "urban_deploy" {
           port {
             container_port = 3000
           }
-          #   liveness_probe {
-          #     http_get {
-          #       path = "/"
-          #       port = 3000
+            liveness_probe {
+              http_get {
+                path = "/"
+                port = 3000
 
-          #       http_header {
-          #         name  = "X-Custom-Header"
-          #         value = "Awesome"
-          #       }
-          #     }
+                http_header {
+                  name  = "X-Custom-Header"
+                  value = "Awesome"
+                }
+              }
 
-          # initial_delay_seconds = 3
-          # period_seconds        = 3
-          #   }
+          initial_delay_seconds = 3
+          period_seconds        = 3
+            }
         }
       }
     }
